@@ -2,7 +2,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
     event.preventDefault();
     
     const enteredCode = document.getElementById('code').value;
-    const correctCode = '1234'; // Замените 'your_secret_code' на ваш секретный код
+    const correctCode = '116152'; // Замените 'your_secret_code' на ваш секретный код
 
     if (enteredCode === correctCode) {
         localStorage.setItem('accessCode', enteredCode); // Сохранение кода доступа в localStorage

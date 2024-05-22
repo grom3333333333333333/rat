@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ratingData = [
         // Пример данных. Добавьте свои данные сюда.
-        { name: 'Аня Миронова', avatar: 'img/аням.png', score: 1, link: 'https://example.com/ivan' },
-        { name: 'Илья Райский', avatar: 'img/илья.png', score: 1, link: 'https://vk.com/i.moiseev2000' },
-		{ name: 'Kesha Volnisty', avatar: 'img/кеша.png', score: 1, link: 'https://vk.com/n.ycmo' },
-		{ name: 'Даниил Аватарский', avatar: 'img/даняа.png', score: 1, link: 'https://vk.com/avataryagod' },
-		{ name: 'София Кошиль', avatar: 'img/соф.png', score: 1, link: 'https://vk.com/sonfixxx' },
-		{ name: 'Лайза Афанасьева', avatar: 'img/лайза.png', score: 1, link: 'https://vk.com/layzzzeerrrr' },
-		{ name: 'Vld Dlv', avatar: 'img/влд.png', score: 1, link: 'https://vk.com/dashesply' },
-		{ name: 'Mikhail Kotikov', avatar: 'img/влд.png', score: 1, link: 'https://vk.com/saumka' },
+        { name: 'Аня Миронова', avatar: 'img/аням.png', score: 0, link: 'https://example.com/ivan' },
+        { name: 'Илья Райский', avatar: 'img/илья.png', score: 6969, link: 'https://vk.com/i.moiseev2000' },
+		{ name: 'Kulek Kulek', avatar: 'img/z.png', score: 6969, link: 'https://vk.com' },
+		{ name: 'Kesha Volnisty', avatar: 'img/кеша.png', score: 0, link: 'https://vk.com/n.ycmo' },
+		{ name: 'Даниил Аватарский', avatar: 'img/даняа.png', score: 0, link: 'https://vk.com/avataryagod' },
+		{ name: 'София Кошиль', avatar: 'img/соф.png', score: 0, link: 'https://vk.com/sonfixxx' },
+		{ name: 'Лайза Афанасьева', avatar: 'img/лайза.png', score: 0, link: 'https://vk.com/layzzzeerrrr' },
+		{ name: 'Vld Dlv', avatar: 'img/влд.png', score: 0, link: 'https://vk.com/dashesply' },
+		{ name: 'Mikhail Kotikov', avatar: 'img/влд.png', score: 0, link: 'https://vk.com/saumka' },
         // Добавьте больше участников по мере необходимости
     ];
 
