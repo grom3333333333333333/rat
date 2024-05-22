@@ -1,0 +1,95 @@
+body {
+    font-family: iskra, sans-serif;
+    background: linear-gradient(to bottom, #4b3b30, #0a0a0a); /* Темно-коричневый к черному градиент */
+    color: #ffffff; /* Белый цвет текста для контраста */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 20px;
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffdf00; /* Желтый цвет текста заголовка */
+}
+
+#rating {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.rating-item {
+    background: rgba(75, 59, 48, 0.9); /* Полупрозрачный темно-коричневый фон */
+    border-radius: 15px;
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    color: #ffffff; /* Белый цвет текста */
+}
+
+.rating-item img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.rating-item .name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.rating-item .score {
+    font-size: 1em;
+    color: #ffdf00; /* Желтый цвет текста для баллов */
+}
+
+#no-rating {
+    display: none;
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #ffdf00; /* Желтый цвет текста */
+}
+
+#info-block {
+    background: rgba(255, 223, 0, 0.9); /* Полупрозрачный желтый фон */
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    color: #000; /* Черный цвет текста */
+}
+
+#info-block h2 {
+    margin-top: 0;
+    color: #000; /* Черный цвет заголовка */
+}
+
+#info-block ul {
+    list-style: none;
+    padding: 0;
+}
+
+#info-block ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+footer {
+    padding: 20px;
+    background: #0a0a0a; /* Черный фон футера */
+    color: #ffffff; /* Белый цвет текста для контраста */
+}

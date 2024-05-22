@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг GROM NEWS</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Проверка, что пользователь ввел правильный код доступа
+        const correctCode = '1234'; // Замените 'your_secret_code' на ваш секретный код
+        const enteredCode = localStorage.getItem('accessCode');
+
+        if (enteredCode !== correctCode) {
+            window.location.href = 'index.html'; // Перенаправление на страницу входа, если код неверный
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/молния грома.png" alt="GROM NEWS Logo">
+        </div>
+    </header>
+    <main>
+        <h1>Рейтинг лучших сотрудников GROM NEWS</h1>
+        <div id="rating">
+            <!-- Рейтинг будет вставлен сюда JavaScript-ом -->
+        </div>
+        <p id="no-rating">Рейтинг ещё не сформирован</p>
+        <div id="info-block">
+            <h2>Как зарабатывать баллы для рейтинга:</h2>
+            <ul>
+                <li>Написание поста (предложка не считается): 1 балл</li>
+                <li>Написание статьи: 3 балла</li>
+                <li>За оформление поста: 2 балла</li>
+                <li>За участие в подготовке интерактива/мероприятия: 10 баллов</li>
+                <li>За выполнение задание в заданные сроки: 1 балл</li>
+                <li>За подлизывание к илье Rayскому: 1000 баллов</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 GROM NEWS. Все права защищены.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
