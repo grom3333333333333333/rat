@@ -1,7 +1,7 @@
 body {
-    font-family: iskra, sans-serif;
-    background: linear-gradient(to bottom, #4b3b30, #0a0a0a); /* Темно-коричневый к черному градиент */
-    color: #ffffff; /* Белый цвет текста для контраста */
+    font-family: 'iskra', sans-serif;
+    background: linear-gradient(to bottom, #e0b386, #c97b40);
+    color: #4b3b30;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ main {
 
 h1 {
     margin-bottom: 20px;
-    color: #ffdf00; /* Желтый цвет текста заголовка */
+    color: #ffdf00;
 }
 
 #rating {
@@ -31,13 +31,14 @@ h1 {
 }
 
 .rating-item {
-    background: rgba(75, 59, 48, 0.9); /* Полупрозрачный темно-коричневый фон */
+    background: #8d5431;
     border-radius: 15px;
     margin: 10px;
     padding: 20px;
     width: 300px;
     text-align: left;
-    color: #ffffff; /* Белый цвет текста */
+    color: #ffffff;
+    position: relative;
 }
 
 .rating-item img {
@@ -54,28 +55,36 @@ h1 {
 
 .rating-item .score {
     font-size: 1em;
-    color: #ffdf00; /* Желтый цвет текста для баллов */
+    color: #ffdf00;
+}
+
+.rating-item .role {
+    background: #ffdf00;
+    color: #8d5431;
+    border-radius: 10px;
+    padding: 3px 10px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
 
 #no-rating {
     display: none;
     font-size: 1.5em;
     margin-top: 20px;
-    color: #ffdf00; /* Желтый цвет текста */
+    color: #ffdf00;
 }
 
 #info-block {
-    background: rgba(255, 223, 0, 0.9); /* Полупрозрачный желтый фон */
+    background: #f5e6c3;
     border-radius: 15px;
     margin: 20px auto;
     padding: 20px;
     max-width: 600px;
-    color: #000; /* Черный цвет текста */
+    color: #4b3b30;
 }
 
 #info-block h2 {
     margin-top: 0;
-    color: #000; /* Черный цвет заголовка */
 }
 
 #info-block ul {
@@ -90,6 +99,57 @@ h1 {
 
 footer {
     padding: 20px;
-    background: #0a0a0a; /* Черный фон футера */
-    color: #ffffff; /* Белый цвет текста для контраста */
+    background: #4b3b30;
+    color: #ffffff;
+}
+
+button {
+    background: #ffdf00;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #e0b386;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.modal-body {
+    padding: 10px 0;
+}
+
+.close {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #000;
 }

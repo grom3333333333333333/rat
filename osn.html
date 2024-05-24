@@ -6,12 +6,10 @@
     <title>GROM</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        // Проверка, что пользователь ввел правильный код доступа
-        const correctCode = '116152'; // Замените 'your_secret_code' на ваш секретный код
+        const correctCode = '116152'; 
         const enteredCode = localStorage.getItem('accessCode');
-
         if (enteredCode !== correctCode) {
-            window.location.href = 'index.html'; // Перенаправление на страницу входа, если код неверный
+            window.location.href = 'index.html'; 
         }
     </script>
 </head>
@@ -22,10 +20,8 @@
         </div>
     </header>
     <main>
-        <h1>Баллы сотрудников GROMNEWS</h1>
-        <div id="rating">
-            <!-- Рейтинг будет вставлен сюда JavaScript-ом -->
-        </div>
+        <h1>Рейтинг сотрудников GROMNEWS</h1>
+        <div id="rating"></div>
         <p id="no-rating">Рейтинг ещё не сформирован</p>
         <div id="info-block">
             <h2>Как зарабатывать баллы для рейтинга:</h2>
@@ -34,9 +30,9 @@
                 <li>Написание статьи: 3 балла</li>
                 <li>За оформление поста: 2 балла</li>
                 <li>За участие в подготовке интерактива/мероприятия: 10 баллов</li>
-                <li>За выполнение задание в заданные сроки: 1 балл</li>
-                <h3>Список может дополняться по мере необходиомости!</h3>
+                <li>За выполнение задания в заданные сроки: 1 балл</li>
             </ul>
+            <h3>Список может дополняться по мере необходимости!</h3>
         </div>
     </main>
     <footer>
