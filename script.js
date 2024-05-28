@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ratingData = [
         { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Илья Райский', avatar: 'img/илья.png', role: 'Папа', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
+      //  { name: 'Илья Райский', avatar: 'img/илья.png', role: 'Папа', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
+       // { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
         { name: 'Kesha Volnisty', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
         { name: 'Даниил Аватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Лайза Афанасьева', avatar: 'img/лайза.png', role: 'редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
+        { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0 } },
+       // { name: 'Лайза Афанасьева', avatar: 'img/лайза.png', role: 'редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
         { name: 'Vld Dlv', avatar: 'img/влд.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
         { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0 } }
     ];

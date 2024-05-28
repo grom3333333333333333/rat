@@ -39,6 +39,9 @@ h1 {
     text-align: left;
     color: #ffffff;
     position: relative;
+    box-shadow:black
+    
+
 }
 
 .rating-item img {
@@ -109,6 +112,8 @@ button {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    font-family: 'iskra', sans-serif;
+    
 }
 
 button:hover {
