@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
     const ratingData = [
-        { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 8, articles: 0, design: 0, events: 0, deadlines: 1 } },
-        { name: 'Илья Райский', avatar: 'img/илья.png', role: 'Папа', tasks: { posts: 6, articles: 0, design: 0, events: 0, deadlines: 0 } },
+        { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 1 } },
+        { name: 'Илья Райский', avatar: 'img/илья.png', role: 'Папа', tasks: { posts: 7, articles: 0, design: 0, events: 0, deadlines: 0 } },
        // { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Kesha Volnisty', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 9, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Даниил Аватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 6, articles: 1, design: 0, events: 0, deadlines: 1 } },
+        { name: 'Kesha Volnisty', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 10, articles: 0, design: 0, events: 0, deadlines: 0 } },
+        { name: 'Даниил Аватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 1, events: 0, deadlines: 0 } },
+        { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 6, articles: 1, design: 0, events: 2, deadlines: 1 } },
        // { name: 'Лайза Афанасьева', avatar: 'img/лайза.png', role: 'редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
        // { name: 'Vld Dlv', avatar: 'img/влд.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 0, events: 0, deadlines: 0 } }
+        { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 20, articles: 0, design: 1, events: 1, deadlines: 0 } }
     ];
 
     const points = {
         posts: 1,
         articles: 3,
         design: 2,
-        events: 10,
+        events: 5,
         deadlines: 2
     };
 
