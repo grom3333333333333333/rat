@@ -1,121 +1,189 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const ratingData = [
-        { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 1 } },
-        { name: 'Илья Райский', avatar: 'img/илья.png', role: 'Папа', tasks: { posts: 7, articles: 0, design: 0, events: 0, deadlines: 0 } },
-       // { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Kesha Volnisty', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 10, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Даниил Аватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 1, events: 0, deadlines: 0 } },
-        { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 6, articles: 1, design: 0, events: 2, deadlines: 1 } },
-       // { name: 'Лайза Афанасьева', avatar: 'img/лайза.png', role: 'редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-       // { name: 'Vld Dlv', avatar: 'img/влд.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0 } },
-        { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 20, articles: 0, design: 1, events: 1, deadlines: 0 } }
-    ];
+    let currentMonth = 'June'; // начальный месяц
+    const ratingDataByMonth = {
+        'June': [
+			{ name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 10 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
+            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 8, articles: 1, design: 1, events: 2, deadlines: 1, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 20, articles: 0, design: 2, events: 1, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+        ],
+        'July': [
+		    { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
+            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+			{ name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Оля Шокорева', avatar: 'img/оля.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Roman Bazhukov', avatar: 'img/рома.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } }
+		]
+    };
 
     const points = {
         posts: 1,
         articles: 3,
         design: 2,
-        events: 5,
-        deadlines: 2
+        events: 10,
+        deadlines: 1,
+        correction: 0.5
     };
 
-    const calculateScore = tasks => {
-        let score = 0;
-        for (let task in tasks) {
-            score += tasks[task] * points[task];
-        }
-        return score;
-    };
-
+    const monthSelector = document.getElementById('month-selector');
     const ratingContainer = document.getElementById('rating');
-    const noRatingText = document.getElementById('no-rating');
+    const noRatingMessage = document.getElementById('no-rating');
+    const progressBar = document.getElementById('progress-bar');
+    const topEmployeeAvatar = document.getElementById('top-employee-avatar');
+    const topEmployeeName = document.getElementById('top-employee-name');
+    const topEmployeeScore = document.getElementById('top-employee-score');
+    const socialMerchList = document.getElementById('social-merch-list');
 
-    if (ratingData.length === 0) {
-        noRatingText.style.display = 'block';
-        ratingContainer.style.display = 'none';
-    } else {
-        noRatingText.style.display = 'none';
-        ratingContainer.style.display = 'flex';
+    // Заполнение выпадающего списка месяцами
+    for (let month in ratingDataByMonth) {
+        let option = document.createElement('option');
+        option.value = month;
+        option.textContent = month;
+        monthSelector.appendChild(option);
+    }
 
-        ratingData.sort((a, b) => calculateScore(b.tasks) - calculateScore(a.tasks)).forEach(item => {
-            const score = calculateScore(item.tasks);
+    // Обновление данных при изменении месяца
+    monthSelector.addEventListener('change', function () {
+        currentMonth = this.value;
+        updateRating();
+    });
 
-            const ratingItem = document.createElement('div');
-            ratingItem.className = 'rating-item';
+    // Функция обновления данных о рейтинге
+    function updateRating() {
+        const data = ratingDataByMonth[currentMonth];
+        if (data && data.length > 0) {
+            // Сортировка по убыванию баллов
+            data.sort((a, b) => calculateScore(b.tasks) - calculateScore(a.tasks));
 
-            const avatar = document.createElement('img');
-            avatar.src = item.avatar;
-            avatar.alt = `${item.name} avatar`;
+            ratingContainer.innerHTML = ''; // Очищаем текущие данные
+            noRatingMessage.style.display = 'none';
 
-            const name = document.createElement('span');
-            name.className = 'name';
-            name.textContent = item.name;
+            let totalPoints = 0;
+            data.forEach((person, index) => {
+                const ratingItem = document.createElement('div');
+                ratingItem.classList.add('rating-item');
 
-            const role = document.createElement('span');
-            role.className = 'role';
-            role.textContent = item.role;
+                ratingItem.innerHTML = `
+                    <div class="image-container">
+                        <img src="${person.avatar}" alt="${person.name}">
+                        <div>
+                            <div class="name">${person.name}</div>
+                            <div class="role">${person.role}</div>
+                            <div class="score">Баллы: ${calculateScore(person.tasks)}</div>
+                            <div class="merch-info">Мерч: ${person.merch.points} баллов (${person.merch.networks.join(', ')})</div>
+                        </div>
+                    </div>
+                `;
 
-            const scoreElem = document.createElement('span');
-            scoreElem.className = 'score';
-            scoreElem.textContent = `Баллы: ${score}`;
+                ratingContainer.appendChild(ratingItem);
 
-            const detailsButton = document.createElement('button');
-            detailsButton.textContent = 'Подробнее';
-            detailsButton.addEventListener('click', () => showModal(item));
+                ratingItem.addEventListener('click', function () {
+                    showModal(person);
+                });
 
-            ratingItem.appendChild(role);
-            ratingItem.appendChild(avatar);
-            ratingItem.appendChild(name);
-            ratingItem.appendChild(document.createElement('br'));
-            ratingItem.appendChild(scoreElem);
-            ratingItem.appendChild(document.createElement('br'));
-            ratingItem.appendChild(detailsButton);
+                // Рассчитываем общие баллы для прогресс-бара
+                totalPoints += calculateScore(person.tasks);
+            });
 
-            ratingContainer.appendChild(ratingItem);
+            // Обновляем прогресс-бар
+            updateProgressBar(totalPoints);
+
+            // Находим самого активного сотрудника
+            const topEmployee = data[0]; // Предполагаем, что первый элемент отсортированного массива - самый активный
+            if (topEmployee) {
+                topEmployeeAvatar.src = topEmployee.avatar;
+                topEmployeeAvatar.alt = topEmployee.name;
+                topEmployeeName.textContent = topEmployee.name;
+                topEmployeeScore.textContent = `Баллы: ${calculateScore(topEmployee.tasks)}`;
+            }
+        } else {
+            ratingContainer.innerHTML = '';
+            noRatingMessage.style.display = 'block';
+            progressBar.style.width = '0%';
+            topEmployeeAvatar.src = '';
+            topEmployeeName.textContent = '';
+            topEmployeeScore.textContent = '';
+        }
+    }
+
+    // Функция расчета общего количества баллов
+    function calculateScore(tasks) {
+        let totalScore = 0;
+        for (let task in tasks) {
+            totalScore += tasks[task] * points[task];
+        }
+        return totalScore;
+    }
+
+    // Функция отображения модального окна с деталями задач
+    function showModal(item) {
+        const modal = document.querySelector('.modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        const modalTaskList = document.getElementById('modal-task-list');
+
+        modalTitle.textContent = item.name;
+        modalBody.textContent = ''; // Очищаем содержимое body перед добавлением новых данных
+
+        const tasks = item.tasks;
+        for (let task in tasks) {
+            const taskItem = document.createElement('li');
+            taskItem.textContent = `${task}: ${tasks[task]} (баллы: ${tasks[task] * points[task]})`;
+            modalTaskList.appendChild(taskItem);
+        }
+
+        modal.style.display = 'block';
+
+        // Закрытие модального окна при клике на крестик или вне окна
+        const closeModal = modal.querySelector('.close');
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            modalTaskList.innerHTML = ''; // Очищаем список задач при закрытии модального окна
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                modalTaskList.innerHTML = ''; // Очищаем список задач при закрытии модального окна
+            }
         });
     }
 
-    function showModal(item) {
-        const existingModal = document.querySelector('.modal');
-        if (existingModal) {
-            existingModal.remove();
+    // Функция обновления прогресс-бара
+    function updateProgressBar(totalPoints) {
+        if (totalPoints > 0) {
+            const plan = 100; // Здесь можно указать план в баллах
+            const progress = (totalPoints / plan) * 100;
+            progressBar.style.width = `${progress}%`;
+        } else {
+            progressBar.style.width = '0%';
         }
-
-        const modal = document.createElement('div');
-        modal.className = 'modal';
-        modal.style.display = 'flex';
-
-        const modalContent = document.createElement('div');
-        modalContent.className = 'modal-content';
-
-        const modalHeader = document.createElement('div');
-        modalHeader.className = 'modal-header';
-
-        const modalTitle = document.createElement('h2');
-        modalTitle.textContent = item.name;
-
-        const closeModal = document.createElement('span');
-        closeModal.className = 'close';
-        closeModal.innerHTML = '&times;';
-        closeModal.addEventListener('click', () => modal.remove());
-
-        modalHeader.appendChild(modalTitle);
-        modalHeader.appendChild(closeModal);
-
-        const modalBody = document.createElement('div');
-        modalBody.className = 'modal-body';
-
-        const taskList = document.createElement('ul');
-        for (let task in item.tasks) {
-            const taskItem = document.createElement('li');
-            taskItem.textContent = `${task}: ${item.tasks[task]} (баллы: ${item.tasks[task] * points[task]})`;
-            taskList.appendChild(taskItem);
-        }
-
-        modalBody.appendChild(taskList);
-        modalContent.appendChild(modalHeader);
-        modalContent.appendChild(modalBody);
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
     }
+
+    // Инициализация при загрузке страницы
+    updateRating();
+
+    // Добавление блока для мерча сообщества
+    const socialMerch = [
+        { name: 'Аня Миронова', merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+        { name: 'Kesha Volnisty', merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+        { name: 'Даниил Аватарский', merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+        { name: 'София Кошиль', merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+        { name: 'Миша Котиков', merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } }
+    ];
+
+    socialMerch.forEach(person => {
+        const merchDiv = document.createElement('div');
+        merchDiv.classList.add('employee-merch-item');
+        merchDiv.innerHTML = `
+            <p>${person.name}:</p>
+            <p>Баллы: ${person.merch.points}</p>
+            <p>Доступен на: ${person.merch.networks.join(', ')}</p>
+        `;
+        socialMerchList.appendChild(merchDiv);
+    });
 });

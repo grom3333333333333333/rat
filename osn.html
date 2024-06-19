@@ -5,13 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GROM</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        const correctCode = '116152'; 
-        const enteredCode = localStorage.getItem('accessCode');
-        if (enteredCode !== correctCode) {
-            window.location.href = 'index.html'; 
-        }
-    </script>
 </head>
 <body>
     <header>
@@ -19,8 +12,24 @@
             <img src="img/молния грома.png" alt="GROM NEWS Logo">
         </div>
     </header>
+    <div id="top-employee-banner">
+    <div class="top-employee-info">
+        <img id="top-employee-avatar-banner" src="img/z.png" alt="Avatar">
+        <div class="top-employee-text">
+            <div id="top-employee-name-banner">Лучший работник</div>
+            <div id="top-employee-name-banner">Кулёк Кулёк</div>
+            <div id="top-employee-score-banner">Баллы: 99999999999</div>
+        </div>
+    </div>
+</div>
+
     <main>
         <h1>Рейтинг сотрудников GROMNEWS</h1>
+        <h3>Последнее обновление рейтинга: 19.06</h3>
+        <h3>Начало учёта баллов с: 23 мая</h3>
+        <select id="month-selector">
+            <!-- Добавьте другие месяцы по необходимости -->
+        </select>
         <div id="rating"></div>
         <p id="no-rating">Рейтинг ещё не сформирован</p>
         <div id="info-block">
@@ -31,10 +40,10 @@
                 <li>За оформление поста: 2 балла</li>
                 <li>За участие в подготовке интерактива/мероприятия: 10 баллов</li>
                 <li>За выполнение задания в заданные сроки: 1 балл</li>
+                <li>Корректировка: 0.5 баллов</li>
             </ul>
             <h3>Список может дополняться по мере необходимости!</h3>
         </div>
-    </main>
     <footer>
         <p>&copy; 2024 GROM NEWS. Все права НЕ защищены.</p>
     </footer>

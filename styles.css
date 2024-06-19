@@ -1,7 +1,7 @@
 body {
     font-family: 'iskra', sans-serif;
-    background: linear-gradient(to bottom, #e0b386, #c97b40);
-    color: #4b3b30;
+    background: linear-gradient(to bottom, #8a2be2, #4b0082);
+    color: #ffffff;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -31,7 +31,7 @@ h1 {
 }
 
 .rating-item {
-    background: #8d5431;
+    background: #4b0082;
     border-radius: 15px;
     margin: 10px;
     padding: 20px;
@@ -39,9 +39,7 @@ h1 {
     text-align: left;
     color: #ffffff;
     position: relative;
-    box-shadow:black
-    
-
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .rating-item img {
@@ -63,11 +61,22 @@ h1 {
 
 .rating-item .role {
     background: #ffdf00;
-    color: #8d5431;
+    color: #4b0082;
     border-radius: 10px;
     padding: 3px 10px;
     margin-bottom: 10px;
     display: inline-block;
+}
+
+.rating-item .image-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.additional-image {
+    width: 40px;
+    height: 40px;
 }
 
 #no-rating {
@@ -78,12 +87,12 @@ h1 {
 }
 
 #info-block {
-    background: #f5e6c3;
+    background: #4b0082;
     border-radius: 15px;
     margin: 20px auto;
     padding: 20px;
     max-width: 600px;
-    color: #4b3b30;
+    color: #ffffff;
 }
 
 #info-block h2 {
@@ -102,7 +111,7 @@ h1 {
 
 footer {
     padding: 20px;
-    background: #4b3b30;
+    background: #4b0082;
     color: #ffffff;
 }
 
@@ -113,7 +122,6 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-family: 'iskra', sans-serif;
-    
 }
 
 button:hover {
@@ -130,6 +138,7 @@ button:hover {
     background: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
+    z-index: 1000;
 }
 
 .modal-content {
@@ -139,6 +148,7 @@ button:hover {
     text-align: left;
     max-width: 500px;
     width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
@@ -149,12 +159,136 @@ button:hover {
     padding-bottom: 10px;
 }
 
+.modal-header .close {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: #888;
+}
+
 .modal-body {
     padding: 10px 0;
 }
 
-.close {
+.modal-body ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-body ul li {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+/* Добавляем стили для прогресс-бара */
+#progress-bar {
+    height: 20px;
+    background-color: #ffdf00;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+    margin: 10px 0;
+}
+
+/* Стили для выпадающего списка (select) */
+#month-selector {
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #4b0082;
+    color: #fff;
     cursor: pointer;
-    font-size: 1.5em;
-    color: #000;
+    appearance: none;
+}
+
+#month-selector option {
+    background-color: #4b0082;
+    color: #fff;
+}
+
+/* Стили для блока лучшего работника */
+#top-employee {
+    background: #4b0082;
+    border-radius: 15px;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 600px;
+    color: #ffffff;
+}
+
+#top-employee h2 {
+    margin-top: 0;
+}
+
+.top-employee-info {
+    display: flex;
+    align-items: center;
+}
+
+#top-employee-avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#top-employee-name {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#top-employee-score {
+    font-size: 1em;
+    color: #ffdf00;
+}
+
+#top-employee-banner {
+    background-color: #4b0082;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-family: 'iskra', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    animation: glow 2s linear infinite alternate;
+	margin: 25px;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.8);
+    }
+}
+
+.top-employee-info {
+    display: flex;
+    align-items: center;
+}
+
+#top-employee-avatar-banner {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+    border: 2px solid #ffdf00;
+}
+
+.top-employee-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#top-employee-name-banner {
+    margin-bottom: 5px;
+}
+
+#top-employee-score-banner {
+    font-size: 18px;
 }
