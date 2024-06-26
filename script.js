@@ -1,22 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let currentMonth = 'June'; // начальный месяц
+    let currentMonth = 'July'; // начальный месяц
     const ratingDataByMonth = {
         'June': [
-			{ name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 10 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
-            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 8, articles: 1, design: 1, events: 2, deadlines: 1, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 20, articles: 0, design: 2, events: 1, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+			{ name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 11, discussion: 0  }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
+            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Корректор', tasks: { posts: 2, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 9, articles: 1, design: 1, events: 2, deadlines: 1, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 20, articles: 0, design: 2, events: 1, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
         ],
         'July': [
-		    { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
-            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-			{ name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Оля Шокорева', avatar: 'img/оля.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Roman Bazhukov', avatar: 'img/рома.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0 }, merch: { points: 0, networks: ['Нет'] } }
+			{ name: 'Илья Райский', avatar: 'img/илья.png', role: 'Король', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Везде.'] } },
+			{ name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Везде.'] } },
+		    { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },
+            { name: 'Даниил Неаватарский', avatar: 'img/даняа.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'София Кошиль', avatar: 'img/соф.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+			{ name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Оля Шокорева', avatar: 'img/оля.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Roman Bazhukov', avatar: 'img/рома.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0 }, merch: { points: 0, networks: ['Нет'] } }
 		]
     };
 
@@ -26,7 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
         design: 2,
         events: 10,
         deadlines: 1,
-        correction: 0.5
+        correction: 0.5,
+		discussion: 1.5
     };
 
     const monthSelector = document.getElementById('month-selector');

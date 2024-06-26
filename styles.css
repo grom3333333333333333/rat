@@ -276,19 +276,14 @@ button:hover {
     height: 80px;
     border-radius: 50%;
     margin-right: 20px;
-    border: 2px solid #ffdf00;
-}
-
-.top-employee-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 #top-employee-name-banner {
-    margin-bottom: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 #top-employee-score-banner {
-    font-size: 18px;
+    font-size: 1.2em;
+    color: #ffdf00;
 }
