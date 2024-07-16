@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
             { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Глав. Редактор', tasks: { posts: 10, articles: 0, design: 1, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
 			{ name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 0, articles: 1, design: 0, events: 0, deadlines: 1, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Нет'] } },
 			{ name: 'Оля Шокорева', avatar: 'img/оля.png', role: 'Редактор', tasks: { posts: 2, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0  }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Roman Bazhukov', avatar: 'img/рома.png', role: 'Редактор', tasks: { posts: 0, articles: 1, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0 }, merch: { points: 0, networks: ['Нет'] } }
+			{ name: 'Roman Bazhukov', avatar: 'img/рома.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0 }, merch: { points: 0, networks: ['Нет'] } }
 		]
     };
 
