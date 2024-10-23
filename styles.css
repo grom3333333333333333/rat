@@ -263,3 +263,60 @@ button:hover {
     border-radius: 50px;
     margin: 25px;
 }
+
+
+.banner {
+  position: fixed;
+  top: -100px; /* Скрыт изначально */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 100;
+  animation: slideDown 1s forwards, glow 2s infinite;
+}
+
+.banner .avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.banner .info h2 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.banner .info p {
+  margin: 5px 0;
+  font-size: 1.2em;
+  color: #555;
+}
+
+@keyframes slideDown {
+  from {
+    top: -200px;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.9);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+  }
+  
+  
