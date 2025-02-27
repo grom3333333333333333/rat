@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    let currentMonth = 'Jan'; // начальный месяц
+    let currentMonth = 'Feb'; // начальный месяц
     const ratingDataByMonth = {
         'June': [
             { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 17, articles: 0, design: 1, events: 1, deadlines: 0, correction: 0, discussion: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
@@ -78,14 +78,26 @@ document.addEventListener('DOMContentLoaded', function () {
 		'Jan': [
 			{ name: 'Илья Райский', avatar: 'img/илья.png', role: 'Король', tasks: { posts: 0, articles: 0, design: 1, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Везде.'] } },
             { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 6, articles: 1, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Везде.'] } },
-            { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 8, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-			{ name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 1, design: 0, events: 0, deadlines: 0, correction: 25, discussion: 0, penalty: 0 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },    
-            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Глав. Редактор', tasks: { posts: 4, articles: 0, design: 1, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
-            { name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
-            { name: 'Саша Меньковский', avatar: 'img/саша.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 18, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Света Никулина', avatar: 'img/свет.png', role: 'Редактор', tasks: { posts: 11, articles: 1, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Егорка Финесс', avatar: 'img/егор.png', role: 'Редактор', tasks: { posts: 18, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
-			{ name: 'Диана Фоменко', avatar: 'img/диана.png', role: 'Редактор', tasks: { posts: 19, articles: 1, design: 0, events: 0, deadlines: 0, correction: 3, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } }
+            { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 15, articles: 0, design: 0, events: 0, deadlines: 2, correction: 28, discussion: 0, penalty: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+			{ name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 1, design: 0, events: 0, deadlines: 0, correction: 30, discussion: 0, penalty: 0 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },    
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Глав. Редактор', tasks: { posts: 5, articles: 0, design: 1, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Екатерина Фраерок', avatar: 'img/катя.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0, correction: 1, discussion: 1, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+            { name: 'Саша Меньковский', avatar: 'img/саша.png', role: 'Редактор', tasks: { posts: 0, articles: 0, design: 19, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Света Никулина', avatar: 'img/свет.png', role: 'Редактор', tasks: { posts: 15, articles: 1, design: 0, events: 0, deadlines: 2, correction: 4, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Егорка Финесс', avatar: 'img/егор.png', role: 'Редактор', tasks: { posts: 21, articles: 0, design: 0, events: 0, deadlines: 0, correction: 1, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Диана Фоменко', avatar: 'img/диана.png', role: 'Редактор', tasks: { posts: 20, articles: 1, design: 0, events: 0, deadlines: 2, correction: 20, discussion: 0, penalty: 6 }, merch: { points: 0, networks: ['Нет'] } }
+	 ],
+		'Feb': [
+			{ name: 'Илья Райский', avatar: 'img/илья.png', role: 'Король', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Везде.'] } },
+            { name: 'Kulek Kulek', avatar: 'img/z.png', role: 'Администратор', tasks: { posts: 19, articles: 0, design: 2, events: 0, deadlines: 1, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Везде.'] } },
+            { name: 'Аня Миронова', avatar: 'img/аням.png', role: 'Редактор', tasks: { posts: 12, articles: 0, design: 0, events: 0, deadlines: 2, correction: 4, discussion: 8, penalty: 3 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+			{ name: 'Innokenty Formalin', avatar: 'img/кеша.png', role: 'Корректор', tasks: { posts: 0, articles: 0, design: 0, events: 0, deadlines: 0, correction: 18, discussion: 0, penalty: 0 }, merch: { points: 3, networks: ['Худи (VK)', 'АП (VK)', 'Худи (ОК)'] } },    
+            { name: 'Mikhail Kotikov', avatar: 'img/миша.png', role: 'Главный Редактор', tasks: { posts: 24, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 2, networks: ['Худи (VK)', 'АП (VK)'] } },
+            { name: 'Виктория Восстания', avatar: 'img/вика.png', role: 'Редактор', tasks: { posts: 5, articles: 0, design: 1, events: 0, deadlines: 7, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+            { name: 'Саша Меньковский', avatar: 'img/саша.png', role: 'Оформитель', tasks: { posts: 2, articles: 0, design: 28, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Света Никулина', avatar: 'img/свет.png', role: 'Редактор', tasks: { posts: 28, articles: 0, design: 0, events: 0, deadlines: 43, correction: 1, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Егорка Финесс', avatar: 'img/егор.png', role: 'Редактор', tasks: { posts: 1, articles: 0, design: 0, events: 0, deadlines: 0, correction: 0, discussion: 0, penalty: 0 }, merch: { points: 0, networks: ['Нет'] } },
+			{ name: 'Диана Фоменко', avatar: 'img/диана.png', role: 'Редактор', tasks: { posts: 7, articles: 0, design: 0, events: 0, deadlines: 53, correction: 16, discussion: 6, penalty: 6 }, merch: { points: 0, networks: ['Нет'] } }
         ]
     };
 
@@ -94,10 +106,10 @@ document.addEventListener('DOMContentLoaded', function () {
         articles: 3,
         design: 2,
         events: 6,
-        deadlines: 3,
+        deadlines: 0.5,
         correction: 1,
-        discussion: 0.3,
-        penalty: -1 // Штрафы
+        discussion: 2,
+        penalty: 2 // Штрафы
     };
 
     const monthSelector = document.getElementById('month-selector');
@@ -145,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div class="name">${person.name}</div>
                             <div class="role">${person.role}</div>
                             <div class="score">Баллы: ${calculateScore(person.tasks)}</div>
-                            <div class="merch-info">Мерч: ${person.merch.points} баллов (${person.merch.networks.join(', ')})</div>
+
                         </div>
                     </div>
                 `;
@@ -258,3 +270,54 @@ document.addEventListener('DOMContentLoaded', function () {
         socialMerchList.appendChild(merchDiv);
     });
 });
+
+const ctx = document.getElementById('lineChart').getContext('2d');
+
+// Трендовый цвет сезона
+const seasonalColor = '#ff6347'; // Например, цвет "Tomato"
+
+const data = {
+    labels: ['Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь', 'Январь'],
+    datasets: [{
+        label: 'Значения по месяцам',
+        data: [97, 98, 216, 78, 97.2, 173.5, 257.4, 238],
+        borderColor: seasonalColor, // Устанавливаем трендовый цвет сразу
+        fill: false,
+        tension: 0.1
+    }]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {
+        responsive: true,
+        plugins: {
+            title: {
+                display: true,
+                text: 'Общее количество баллов по месяцам <3'
+            },
+            tooltip: {
+                mode: 'nearest',
+                intersect: false
+            }
+        },
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: 'Месяц'
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: 'Баллы'
+                },
+                min: 0
+            }
+        }
+    }
+};
+
+const chart = new Chart(ctx, config);
