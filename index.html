@@ -1,21 +1,154 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вход</title>
-    <link rel="stylesheet" href="log.css">
+    <title>GROM.FAMILY</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <main>
-        <h1>Вход на сайт</h1>
-        <form id="login-form">
-            <label for="code">Введите пароль:</label>
-            <input type="password" id="code" name="code" required>
-            <button type="submit">Войти</button>
-        </form>
-        <p id="error-message" style="display:none; color:red;">Доступ на сайт по ссылке закрыт, перейдите в приложение.</p>
-    </main>
-    <script src="login.js"></script>
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="spinner"></div>
+            <h1>GROM.NEWS</h1>
+            <h1>GROM.FAMILY</h1>
+            <h3>date: 27.05</h3>
+            <p class="last-update"><span id="update-date"></span></p>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="container" id="main-content">
+        <header>
+            <h1>Рейтинг сотрудников <span>GROM.NEWS</span></h1>
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="rating">Рейтинг месяца</button>
+                <button class="tab-btn" data-tab="accumulative">Накопительная система | (udp 27.05)</button>
+                <button class="tab-btn" data-tab="shop">Магазин</button>
+                <button class="tab-btn" data-tab="archive">Архив</button>
+                <button class="tab-btn" data-tab="rules">Как получить баллы?</button>
+            </div>
+        </header>
+
+        <!-- Рейтинг месяца -->
+        <section class="tab-content active" id="rating">
+            <div class="rating-container" id="month-rating">
+                <!-- Карточки будут добавлены через JS -->
+            </div>
+        </section>
+
+        <!-- Накопительная система -->
+        <section class="tab-content" id="accumulative">
+            <div class="rating-container" id="total-rating">
+                <!-- Карточки будут добавлены через JS -->
+            </div>
+        </section>
+
+        <!-- Магазин -->
+        <section class="tab-content" id="shop">
+            <div class="shop-container">
+                <h2>Магазин баллов</h2>
+                <p class="shop-description">Здесь вы можете обменять накопленные баллы на товары. Для покупки напишите Кириллу.</p>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('img/xyd.png')"></div>
+                        <h3>Худи GROMNEWS</h3>
+                        <p class="product-price">199 баллов</p>
+                        <button class="buy-btn" data-product="hoodie">Заказать</button>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('img/paka.png')"></div>
+                        <h3>Авапака GROMNEWS</h3>
+                        <p class="product-price">299 баллов</p>
+                        <button class="buy-btn" data-product="avapak">Заказать</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Архив -->
+        <section class="tab-content" id="archive">
+            <div class="archive-container">
+                <h2>Архив рейтингов</h2>
+                <div class="month-selector">
+                    <select id="month-select">
+                        <option value="">Выберите месяц</option>
+                        <!-- Месяцы будут добавлены через JS -->
+                    </select>
+                </div>
+                <div class="archive-results" id="archive-results">
+                    <p>Выберите месяц для просмотра архивных данных</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Правила -->
+        <section class="tab-content" id="rules">
+            <div class="rules-container">
+                <h2>Как зарабатывать баллы</h2>
+                <div class="rules-content">
+                    <ul class="rules-list">
+                        <li><i class="fas fa-bolt"></i> Написание поста: 1 балл</li>
+                        <li><i class="fas fa-bolt"></i> Написание поста-статьи: 2 балла</li>
+                        <li><i class="fas fa-bolt"></i> За оформление поста: 2 балла</li>
+                        <li><i class="fas fa-bolt"></i> За участие в подготовке интерактива/мероприятия: 10 баллов</li>
+                        <li><i class="fas fa-bolt"></i> Корректировка: 1 балл</li>
+                        <li><i class="fas fa-bolt"></i> Интерактивы в беседе: 2 балла</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Модальное окно для покупки -->
+    <div class="modal" id="purchase-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modal-title">Заказ товара</h2>
+            <p id="modal-text">Для заказа товара напишите Кириллу в личные сообщения. Процедура достаточно быстрая, сначала вам спишут баллы в рейтинге, а замети вы получите свой подарочек.</p>
+            <div class="modal-buttons">
+                <button id="confirm-purchase">ОК</button>
+                <button id="cancel-purchase">ОК</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно профиля -->
+    <div class="modal" id="profile-modal">
+        <div class="modal-content profile-content">
+            <span class="close-modal">&times;</span>
+            <div class="profile-header">
+                <div class="profile-avatar" id="profile-avatar"></div>
+                <div class="profile-info">
+                    <h2 id="profile-name"></h2>
+                    <p id="profile-position"></p>
+                    <div class="profile-points">
+                        <i class="fas fa-bolt"></i>
+                        <span id="profile-points"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <i class="fas fa-medal gold"></i>
+                    <span id="employee-of-month">x0</span>
+                </div>
+                <div class="stat-item">
+                    <img src="img/xyd.png" alt="Худи" class="merch-icon">
+                    <span id="hoodie-count">x0</span>
+                </div>
+                <div class="stat-item">
+                    <img src="img/paka.png" alt="Авапака" class="merch-icon">
+                    <span id="avapak-count">x0</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
