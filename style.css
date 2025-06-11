@@ -1,32 +1,36 @@
-/* Основные стили */
+/* Enhanced iOS 26 Liquid Glass Theme - Preserving All Original Elements */
 :root {
     --primary-color: #0a0a1a;
-    --secondary-color: #141432;
+    --secondary-color: rgba(20, 20, 50, 0.6);
     --accent-color: #1e1e4e;
-    --text-color: #e6e6e6;
+    --text-color: rgba(230, 230, 230, 0.9);
     --highlight: #e94560;
     --highlight-light: #ff6b81;
-    --gold-gradient: linear-gradient(135deg, #ffd700, #daa520, #b8860b);
-    --editor-gradient: linear-gradient(135deg, #000000, #333333, #ffcc00);
-    --trial-gradient: linear-gradient(135deg, #000000, #006400, #00aa00);
+    --gold-gradient: linear-gradient(135deg, rgba(255, 215, 0, 0.8), rgba(218, 165, 32, 0.8), rgba(184, 134, 11, 0.8));
+    --editor-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(51, 51, 51, 0.8), rgba(255, 204, 0, 0.8));
+    --trial-gradient: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 100, 0, 0.8), rgba(0, 170, 0, 0.8));
     --loading-bg: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    --glass-blur: 12px;
+    --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: var(--primary-color);
+    background: var(--loading-bg);
     color: var(--text-color);
     min-height: 100vh;
     overflow-x: hidden;
+    backdrop-filter: blur(5px);
 }
 
-/* Прелоадер */
+/* Enhanced Preloader with Liquid Effect (Preserved Structure) */
 .preloader {
     position: fixed;
     top: 0;
@@ -43,45 +47,60 @@ body {
 
 .preloader-content {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: var(--glass-border);
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
+    width: 60px;
+    height: 60px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     border-top-color: var(--highlight);
-    animation: spin 1s ease-in-out infinite;
-    margin: 0 auto 20px;
+    animation: spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+    margin: 0 auto 25px;
+    position: relative;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+.spinner::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    border-top-color: rgba(255, 255, 255, 0.3);
+    animation: spinReverse 1.5s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
 }
 
 .preloader h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
     background: linear-gradient(to right, #fff, #e94560);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 600;
 }
 
 .last-update {
-    font-size: 1rem;
-    opacity: 0.8;
+    font-size: 1.1rem;
+    opacity: 0.7;
 }
 
-/* Основной контент */
+/* Enhanced Container with Glass Effect (Preserved Structure) */
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 25px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .container.show {
@@ -89,15 +108,21 @@ body {
     transform: translateY(0);
 }
 
+/* Enhanced Header with Glass Effect (Preserved Structure) */
 header {
     text-align: center;
-    margin-bottom: 30px;
-    position: relative;
+    margin-bottom: 40px;
+    padding: 25px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: var(--glass-border);
+    box-shadow: var(--glass-shadow);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 15px;
     background: linear-gradient(to right, #fff, #e94560);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -107,27 +132,28 @@ header h1 {
 header h1 span {
     display: block;
     font-size: 1.5rem;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
-/* Табы */
+/* Enhanced Tabs with Liquid Effect (Preserved Structure) */
 .tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 30px;
+    gap: 12px;
+    margin-bottom: 35px;
 }
 
 .tab-btn {
-    padding: 10px 20px;
-    background: var(--secondary-color);
-    border: none;
-    border-radius: 30px;
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
+    border-radius: 50px;
     color: var(--text-color);
     cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    font-size: 1.05rem;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
     overflow: hidden;
 }
@@ -148,9 +174,10 @@ header h1 span {
 }
 
 .tab-btn.active {
-    background: var(--highlight);
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.8), rgba(255, 107, 129, 0.9));
     color: white;
     font-weight: bold;
+    box-shadow: 0 8px 24px rgba(233, 69, 96, 0.3);
 }
 
 .tab-content {
@@ -158,39 +185,37 @@ header h1 span {
     animation: fadeIn 0.5s ease;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
 .tab-content.active {
     display: block;
 }
 
-/* Карточки сотрудников */
+/* Enhanced Employee Cards with Liquid Glass (Preserved Structure) */
 .rating-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 30px;
     justify-content: center;
 }
 
 .employee-card {
-    width: 320px;
-    height: 180px;
+    width: 340px;
+    height: 200px;
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--glass-shadow);
     cursor: pointer;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: var(--glass-border);
 }
 
 .employee-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);
 }
 
 .employee-card::after {
@@ -200,54 +225,60 @@ header h1 span {
     left: 0;
     width: 100%;
     height: 60%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
 }
 
 .role-badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    top: 15px;
+    right: 15px;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
     font-weight: bold;
     z-index: 2;
+    backdrop-filter: blur(10px);
 }
 
 .admin .role-badge {
     background: rgba(218, 165, 32, 0.3);
     color: gold;
-    border: 1px solid gold;
+    border: 1px solid rgba(255, 215, 0, 0.3);
 }
 
 .editor .role-badge {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     color: #ffcc00;
-    border: 1px solid #ffcc00;
+    border: 1px solid rgba(255, 204, 0, 0.3);
 }
 
 .trial .role-badge {
     background: rgba(0, 100, 0, 0.3);
     color: #00ff00;
-    border: 1px solid #00ff00;
+    border: 1px solid rgba(0, 255, 0, 0.3);
 }
 
 .employee-info {
     position: absolute;
-    bottom: 15px;
-    left: 15px;
+    bottom: 20px;
+    left: 20px;
     z-index: 2;
-    width: calc(100% - 30px);
+    width: calc(100% - 40px);
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(8px);
+    border: var(--glass-border);
 }
 
 .employee-name {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .employee-points {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: white;
     display: flex;
@@ -255,47 +286,41 @@ header h1 span {
 }
 
 .employee-points i {
-    margin-right: 5px;
+    margin-right: 8px;
     color: var(--highlight-light);
 }
 
-/* Градиентные рамки */
+/* Enhanced Gradient Borders with Liquid Effect (Preserved Structure) */
 .admin {
-    border: 3px solid transparent;
-    background-image: linear-gradient(var(--primary-color), var(--primary-color)), 
-                      var(--gold-gradient);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    animation: borderGlow 3s infinite alternate;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--primary-color), var(--primary-color)) padding-box,
+                var(--gold-gradient) border-box;
+    animation: borderGlow 6s infinite alternate;
 }
 
 .editor {
-    border: 3px solid transparent;
-    background-image: linear-gradient(var(--primary-color), var(--primary-color)), 
-                      var(--editor-gradient);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    animation: borderGlow 3s infinite alternate;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--primary-color), var(--primary-color)) padding-box,
+                var(--editor-gradient) border-box;
+    animation: borderGlow 6s infinite alternate;
 }
 
 .trial {
-    border: 3px solid transparent;
-    background-image: linear-gradient(var(--primary-color), var(--primary-color)), 
-                      var(--trial-gradient);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
-    animation: borderGlow 3s infinite alternate;
+    border: 1px solid transparent;
+    background: linear-gradient(var(--primary-color), var(--primary-color)) padding-box,
+                var(--trial-gradient) border-box;
+    animation: borderGlow 6s infinite alternate;
 }
 
-@keyframes borderGlow {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-}
-
-/* Магазин */
+/* Enhanced Shop Section (Preserved Structure) */
 .shop-container {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: var(--glass-border);
+    margin: 20px 0;
 }
 
 .shop-description {
@@ -309,58 +334,77 @@ header h1 span {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 35px;
     margin-top: 30px;
 }
 
 .product-card {
-    background: var(--secondary-color);
-    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     position: relative;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
 }
 
 .product-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
 }
 
 .product-image {
-    height: 200px;
+    height: 220px;
     background-size: cover;
     background-position: center;
+    position: relative;
+}
+
+.product-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
 }
 
 .product-card h3 {
-    margin: 15px 0 10px;
-    font-size: 1.2rem;
+    margin: 20px 0 12px;
+    font-size: 1.3rem;
+    padding: 0 20px;
 }
 
 .product-price {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--highlight);
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding: 0 20px;
 }
 
 .buy-btn {
     width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background: var(--highlight);
+    padding: 12px;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.9), rgba(255, 107, 129, 0.9));
     border: none;
-    border-radius: 30px;
+    border-radius: 50px;
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .buy-btn:hover {
-    background: #c03850;
-    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(192, 56, 80, 0.9), rgba(233, 69, 96, 0.9));
+    transform: translateY(-2px);
 }
 
 .buy-btn:disabled {
@@ -368,10 +412,15 @@ header h1 span {
     cursor: not-allowed;
 }
 
-/* Архив */
+/* Enhanced Archive Section (Preserved Structure) */
 .archive-container {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: var(--glass-border);
+    margin: 20px 0;
 }
 
 .month-selector {
@@ -379,13 +428,19 @@ header h1 span {
 }
 
 #month-select {
-    padding: 10px 20px;
-    border-radius: 30px;
-    background: var(--secondary-color);
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     color: var(--text-color);
-    border: 1px solid var(--accent-color);
+    border: var(--glass-border);
     font-size: 1rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#month-select:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .archive-results {
@@ -395,19 +450,26 @@ header h1 span {
     justify-content: center;
 }
 
-/* Правила */
+/* Enhanced Rules Section (Preserved Structure) */
 .rules-container {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: var(--glass-border);
+    margin: 20px 0;
 }
 
 .rules-content {
     max-width: 600px;
     margin: 0 auto;
-    background: var(--secondary-color);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--glass-shadow);
+    border: var(--glass-border);
 }
 
 .rules-list {
@@ -429,7 +491,7 @@ header h1 span {
     color: var(--highlight-light);
 }
 
-/* Модальные окна */
+/* Enhanced Modal Windows (Preserved Structure) */
 .modal {
     display: none;
     position: fixed;
@@ -437,29 +499,30 @@ header h1 span {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 9998;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(15px);
 }
 
 .modal-content {
-    background: var(--secondary-color);
-    padding: 30px;
-    border-radius: 15px;
+    background: rgba(40, 40, 80, 0.7);
+    padding: 35px;
+    border-radius: 24px;
     max-width: 500px;
     width: 90%;
     position: relative;
-    animation: modalOpen 0.4s ease;
+    animation: modalOpen 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(25px);
+    border: var(--glass-border);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
 .profile-content {
     max-width: 600px;
-}
-
-@keyframes modalOpen {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+    background: rgba(30, 30, 60, 0.7);
+    backdrop-filter: blur(30px);
 }
 
 .close-modal {
@@ -492,67 +555,69 @@ header h1 span {
 }
 
 .modal-buttons button {
-    padding: 10px 20px;
-    border-radius: 30px;
+    padding: 12px 24px;
+    border-radius: 50px;
     border: none;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
 }
 
 #confirm-purchase {
-    background: var(--highlight);
+    background: linear-gradient(135deg, rgba(233, 69, 96, 0.9), rgba(255, 107, 129, 0.9));
     color: white;
+    box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
 }
 
 #confirm-purchase:hover {
-    background: #c03850;
+    background: linear-gradient(135deg, rgba(192, 56, 80, 0.9), rgba(233, 69, 96, 0.9));
 }
 
 #cancel-purchase {
     background: transparent;
     color: var(--text-color);
-    border: 1px solid var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #cancel-purchase:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
-/* Профиль сотрудника */
+/* Enhanced Profile Section (Preserved Structure) */
 .profile-header {
     display: flex;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .profile-avatar {
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     background-size: cover;
     background-position: center;
-    border: 4px solid var(--highlight);
-    margin-right: 20px;
-}
-
-.profile-info {
-    flex: 1;
+    border: 4px solid rgba(233, 69, 96, 0.7);
+    margin-right: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .profile-info h2 {
-    font-size: 1.8rem;
-    margin-bottom: 5px;
+    font-size: 2rem;
+    margin-bottom: 8px;
 }
 
 .profile-info p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     opacity: 0.8;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .profile-points {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
 }
@@ -565,19 +630,26 @@ header h1 span {
 .profile-stats {
     display: flex;
     justify-content: space-around;
-    margin-top: 30px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .stat-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: var(--glass-border);
 }
 
 .stat-item i {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 2.8rem;
+    margin-bottom: 12px;
 }
 
 .stat-item .gold {
@@ -592,14 +664,18 @@ header h1 span {
     margin-bottom: 10px;
 }
 
-/* Адаптивность */
+/* Responsive Design (Preserved Structure) */
 @media (max-width: 768px) {
+    :root {
+        --glass-blur: 8px;
+    }
+    
     header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
     
     header h1 span {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     
     .tabs {
@@ -615,7 +691,7 @@ header h1 span {
     .employee-card {
         width: 100%;
         max-width: 350px;
-        height: 200px;
+        height: 220px;
     }
     
     .products-grid {
@@ -629,11 +705,57 @@ header h1 span {
     
     .profile-avatar {
         margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        width: 120px;
+        height: 120px;
     }
     
     .profile-stats {
         flex-direction: column;
         gap: 20px;
     }
+    
+    .stat-item {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Preserved Original Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    to { transform: rotate(-360deg); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* New iOS 26 Liquid Effect */
+@keyframes liquidHover {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-5px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+/* Apply liquid effect to interactive elements */
+.employee-card:hover, 
+.product-card:hover,
+.tab-btn:hover,
+.buy-btn:hover {
+    animation: liquidHover 2s ease-in-out infinite;
 }
